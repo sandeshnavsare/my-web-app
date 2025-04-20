@@ -1,8 +1,12 @@
 From tomcat:9.0.104-jdk17
 
-# Remove the older build file
-RUN rm -rf /opt/apache-tomcat-9.0.104/webapps/my-web-app-1.0-SNAPSHOT.war
+# Remove default apps
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-COPY /target/my-web-app-1.0-SNAPSHOT.war /opt/apache-tomcat-9.0.104/webapps/
+# Copy WAR
+COPY target/my-web-app.war /usr/local/tomcat/webapps/ROOT.war
 
-EXPOSE 8010
+EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
+
