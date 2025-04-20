@@ -5,4 +5,4 @@ services:
     image: my-web-app:latest
     container_name: mywebapp-container
     ports:
-      - "8010:8010"   # 👈 Tomcat is running on 8010 inside the container
+      - "8080:8080"   # 👈 Tomcat is running on 8010 inside the container
