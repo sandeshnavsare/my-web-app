@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  mywebapp:
+    image: my-web-app:latest
+    container_name: mywebapp-container
+    ports:
+      - "8010:8010"   # 👈 Tomcat is running on 8010 inside the container
